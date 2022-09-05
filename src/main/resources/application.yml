@@ -7,7 +7,7 @@ spring:
 spring:
   h2:
     console:
-      enabled: false
+      enabled: true
   datasource:
     url: jdbc:h2:file:./db/passgen;MODE=MySQL;DB_CLOSE_DELAY=-1;
     username: root
@@ -23,8 +23,8 @@ spring:
   config:
     activate:
       on-profile: dev
-logging:
-  level:
-    org.springframework: 'DEBUG'
+#logging:
+#  level:
+#    org.springframework: 'DEBUG'
 ---
 ## Add more profiles here for production... mode
