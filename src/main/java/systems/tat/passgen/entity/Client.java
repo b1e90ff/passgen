@@ -21,9 +21,7 @@ import javax.validation.constraints.NotNull;
 public class Client {
 
     @Id
-    @SequenceGenerator(name = "cli_seq", sequenceName = "cli_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cli_seq")
-    @NotNull(message = "Client ID must not be null")
+    @NotNull(message = "Client ID cannot be null")
     private Long clientId;
 
     private long creationDate;

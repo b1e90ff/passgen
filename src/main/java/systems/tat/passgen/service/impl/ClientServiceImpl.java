@@ -33,7 +33,13 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client saveClient(Client client) {
-        client.setCreationDate(System.currentTimeMillis());
+        // ToDo if Login exits use the logged information
+        Client oldClient = clientRepository.findByClientId(client.getClientId()).orElse(null);
+
+        if (oldClient == null) {
+            client.setCreationDate(System.currentTimeMillis());
+        }
+
         return clientRepository.save(client);
     }
 }

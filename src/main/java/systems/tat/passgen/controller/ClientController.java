@@ -24,9 +24,6 @@ public class ClientController {
         return clientService.findAllClients();
     }
 
-    /*
-     ToDo: Fix -> If clientId is not a Long it closed the connection with a 400 and no message. (Maybe add a message)
-     */
     @PostMapping
     public Client saveClient(@Valid @RequestBody Client client) {
         return clientService.saveClient(client);
